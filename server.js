@@ -11,10 +11,12 @@ app.use(express.json());
 // Serve your website HTML/CSS files directly from the main folder
 app.use(express.static(path.join(__dirname)));
 
-// Link your file upload/download API routes
+// Link your file upload/download + CMS API routes
 app.use('/api', fileRouter);
 
 // Start the server
 app.listen(PORT, () => {
     console.log(`Cloud server running at http://localhost:${PORT}`);
+    console.log(`CMS: GET  /api/cms`);
+    console.log(`CMS: POST /api/cms/update`);
 });

@@ -48,30 +48,31 @@ router.get('/download/:filename', (req, res) => {
     
     res.download(filePath);
 });
-// 3. DATABASE GET ENDPOINT: Sends database info to any visitor device
-router.get('/content', (req, res) => {
+// 3. CMS GET ENDPOINT: Sends CMS to any visitor/admin device
+router.get('/cms', (req, res) => {
     const dbPath = path.join(__dirname, '../database.json');
-    const rawData = fs.readFileSync(dbPath);
-    res.json(JSON.parse(rawData));
+    const rawData = fs.readFileSync(dbPath, 'utf8');
+    const db = JSON.parse(rawData);
+    res.json(db.siteCms || db);
 });
 
-// 4. DATABASE POST ENDPOINT: Allows the admin to save modified edits
-router.post('/content/update', (req, res) => {
+// 4. CMS POST ENDPOINT: Allows admin to save modified edits (partial updates)
+router.post('/cms/update', (req, res) => {
     const dbPath = path.join(__dirname, '../database.json');
-    
-    // Structure the updated text content
-    const updatedData = [
-        {
-            id: 1,
-            title: req.body.title,
-            description: req.body.description,
-            imageUrl: req.body.imageUrl || ""
-        }
-    ];
+    const rawData = fs.readFileSync(dbPath, 'utf8');
+    const db = JSON.parse(rawData);
 
-    // Commit changes to the JSON file
-    fs.writeFileSync(dbPath, JSON.stringify(updatedData, null, 2));
-    res.json({ message: "Content updated successfully across all devices!" });
+    const patch = req.body;
+    if (!patch || typeof patch !== 'object') {
+        return res.status(400).json({ error: 'Invalid payload' });
+    }
+
+    // Replace siteCms with merged version (shallow merge; nested merge is handled by client shape)
+    db.siteCms = Object.assign({}, db.siteCms || {}, patch.siteCms ? patch.siteCms : patch);
+
+    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
+    res.json({ message: 'CMS updated successfully across all devices!' });
 });
+
 
 module.exports = router;

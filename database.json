@@ -1,8 +1,114 @@
-[
-  {
-    "id": 1,
-    "title": "Welcome to Our Website",
-    "description": "This text can be edited directly by the admin.",
-    "imageUrl": ""
+{
+  "siteCms": {
+    "meta": {
+      "siteName": "LOGAHS ONLINE",
+      "baseUrl": "./"
+    },
+    "nav": {
+      "items": [
+        { "label": "Home", "href": "index.html", "visible": true },
+        { "label": "About", "href": "about.html", "visible": true },
+        { "label": "Admissions", "href": "admissions.html", "visible": true },
+        { "label": "Events", "href": "events.html", "visible": true },
+        { "label": "Club Calendar", "href": "club-calendar.html", "visible": true },
+        { "label": "Resources", "href": "resources.html", "visible": true },
+        { "label": "Register", "href": "register.html", "visible": true }
+      ]
+    },
+    "pages": {
+      "home": {
+        "hero": {
+          "heroTitle": "Connecting Learners, Leaders, and Innovation",
+          "heroSubtitle": "Experience a modern school website built for students, staff, clubs, and administrators with responsive design, fast access, and a professional interface.",
+          "heroCard1Title": "Upcoming Event",
+          "heroCard1Text": "Leadership Summit & Award Ceremony - June 2026",
+          "heroCard2Title": "Featured Club",
+          "heroCard2Text": "Peer Educators Network: Health awareness and student engagement."
+        },
+        "about": {
+          "aboutCard1Title": "Principal’s Message",
+          "aboutCard1Text": "Our school is committed to excellence, creativity, and a supportive learning environment for every student.",
+          "aboutCard2Title": "Responsive Design",
+          "aboutCard2Text": "Accessible on phones, tablets, and desktops with a smooth, modern interface and engaging visuals."
+        },
+        "clubs": {
+          "club1Desc": "Club announcements, activities, event calendar, and member updates.",
+          "club2Desc": "News, member communication, event management, and media uploads.",
+          "club3Desc": "Health campaigns, peer education tools, and support resources."
+        },
+        "contact": {
+          "contactHeadline": "Reach out for school support, admissions, or partnership queries",
+          "contactEmail": "contact@logahsonline.school",
+          "contactPhone": "+263 123 456 789"
+        },
+        "register": {
+          "registerHeadline": "Create your LOGAHS ONLINE account.",
+          "registerDescription": "Register to join the community, clubs, and stay informed on campus updates.",
+          "registerHint": "Registration is simulated on the client side and saves your request locally for the demo experience."
+        },
+        "comments": {
+          "heading": "Comments",
+          "subheading": "Share feedback, ideas, and reactions to school updates",
+          "submitHint": "New comments are reviewed by administrators before appearing publicly."
+        }
+      },
+      "about": {
+        "hero": {
+          "eyebrow": "About LOGAHS",
+          "title": "Empowering learners through community, culture, and innovation.",
+          "description": "LOGAHS ONLINE is a modern school portal designed to connect students, staff, clubs, and administrators in one digital campus experience."
+        },
+        "vision": {
+          "title": "Our Vision",
+          "description": "To make school life easier, more engaging, and more transparent for every member of the learning community."
+        },
+        "team": {
+          "members": [
+            {
+              "name": "Mrs. Chimwemwe Mwale",
+              "title": "Principal",
+              "description": "Principal and lead academic coordinator focused on student success and leadership development.",
+              "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=640&q=80"
+            },
+            {
+              "name": "Mr. Tawanda Chipo",
+              "title": "School Counselor",
+              "description": "School counselor supporting wellbeing, student engagement, and club development.",
+              "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80"
+            },
+            {
+              "name": "Ms. Rudo Moyo",
+              "title": "Community Liaison",
+              "description": "Community liaison helping students connect with events, clubs, and volunteer activities.",
+              "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=640&q=80"
+            }
+          ]
+        },
+        "testimonials": {
+          "items": [
+            {
+              "text": "“The platform makes it so much faster to find club updates and stay on top of events. Our team uses it every week.”",
+              "tag": "Student",
+              "tagColor": "blue"
+            },
+            {
+              "text": "“The admin dashboard gives us quick control over approvals, announcements, and outreach without needing extra tools.”",
+              "tag": "Teacher",
+              "tagColor": "navy"
+            }
+          ]
+        }
+      }
+    },
+    "datasets": {
+      "newsItems": [],
+      "galleryItems": [],
+      "comments": [],
+      "clubEvents": [],
+      "clubAnnouncements": [],
+      "clubUploads": [],
+      "clubBackgrounds": {}
+    }
   }
-]
+}
+
