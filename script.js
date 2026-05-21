@@ -1921,25 +1921,41 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Admin save routine to send newly modified fields back to the server
-async function saveAdminChanges() {
+// 1. LISTEN FOR LIVE CHANGES (Updates every device automatically without refreshing!)
+database.ref('siteContent').on('value', (snapshot) => {
+    const data = snapshot.val();
+    
+    if (data) {
+        // Update the public text seen by all visitors
+        document.getElementById('display-title').innerText = data.title;
+        document.getElementById('display-desc').innerText = data.description;
+
+        // Keep the input boxes inside your admin panel pre-filled with the latest edits
+        if (document.getElementById('edit-title') && document.getElementById('edit-desc')) {
+            document.getElementById('edit-title').value = data.title;
+            document.getElementById('edit-desc').value = data.description;
+        }
+    } else {
+        // Sets default placeholder text if your database is completely empty
+        document.getElementById('display-title').innerText = "Welcome to Our Website";
+        document.getElementById('display-desc').innerText = "This text can be edited directly by the admin.";
+    }
+});
+
+// 2. ADMIN SAVE FUNCTION (Pushes updates to the Firebase cloud)
+function saveAdminChanges() {
     const updatedTitle = document.getElementById('edit-title').value;
     const updatedDesc = document.getElementById('edit-desc').value;
 
-    try {
-        const response = await fetch('/api/content/update', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title: updatedTitle, description: updatedDesc })
-        });
-
-        const result = await response.json();
-        alert(result.message);
-        
-        // Refresh the public page blocks immediately to mirror changes
-        document.getElementById('display-title').innerText = updatedTitle;
-        document.getElementById('display-desc').innerText = updatedDesc;
-    } catch (err) {
-        alert("Could not synchronize changes to cloud database.");
-    }
+    // Direct push to Firebase - no server restarts required!
+    database.ref('siteContent').set({
+        title: updatedTitle,
+        description: updatedDesc
+    })
+    .then(() => {
+        alert("Published updates globally successfully!");
+    })
+    .catch((error) => {
+        alert("Error saving updates to database: " + error.message);
+    });
 }
