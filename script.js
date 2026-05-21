@@ -1857,6 +1857,72 @@ function init() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', init);
+async function loadCmsAndApply() {
+  try {
+    const res = await fetch('/api/cms');
+    if (!res.ok) return;
+    const cms = await res.json();
+
+    // Apply nav href + labels if elements exist
+    if (cms?.nav?.items && Array.isArray(cms.nav.items)) {
+      document.querySelectorAll('[data-cms="nav-item"]').forEach((el) => {
+        const key = el.getAttribute('data-cms-key');
+        const item = cms.nav.items.find((i) => String(i.href) === String(key) || i.label === key);
+        if (item) {
+          if (el.tagName.toLowerCase() === 'a') {
+            el.textContent = item.label;
+            el.setAttribute('href', item.href);
+          }
+        }
+      });
+
+      // Hide/show items if annotated
+      document.querySelectorAll('[data-cms-nav-href]').forEach((a) => {
+        const href = a.getAttribute('data-cms-nav-href');
+        const item = cms.nav.items.find((i) => i.href === href);
+        if (!item) return;
+        a.style.display = item.visible === false ? 'none' : '';
+      });
+    }
+
+    // Apply page copy by data-cms paths
+    document.querySelectorAll('[data-cms]').forEach((node) => {
+      const path = node.getAttribute('data-cms');
+      if (!path) return;
+
+      // Support paths like pages.home.hero.heroTitle
+      const parts = String(path).split('.');
+      let cur = cms;
+      for (const p of parts) {
+        if (cur && Object.prototype.hasOwnProperty.call(cur, p)) {
+          cur = cur[p];
+        } else {
+          cur = undefined;
+          break;
+        }
+      }
+
+      if (cur === undefined || cur === null) return;
+
+      const isAttr = node.hasAttribute('data-cms-attr') ? node.getAttribute('data-cms-attr') : null;
+      if (isAttr) {
+        node.setAttribute(isAttr, String(cur));
+      } else {
+        node.textContent = String(cur);
+      }
+
+      if (node.tagName.toLowerCase() === 'input' || node.tagName.toLowerCase() === 'textarea' || node.tagName.toLowerCase() === 'select') {
+        node.value = String(cur);
+      }
+    });
+  } catch (e) {
+    // ignore fetch errors; localStorage fallback still works for existing datasets
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadCmsAndApply().finally(() => init());
+});
+
 
 
