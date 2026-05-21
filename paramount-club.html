@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paramount Club | LOGAHS ONLINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell club-shell">
+    <header class="site-header club-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>PARAMOUNT CLUB</span>
+      </div>
+      <nav class="site-nav admin-nav">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="interact-club.html">Interact Club</a>
+        <a href="pen-club.html">Peer Educators</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section-block hero-section club-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Paramount Club Platform</p>
+          <h1>Empowering club leaders with news, media, and member collaboration.</h1>
+          <p>Publish activities, manage members, and keep the school community informed with a professional club dashboard.</p>
+          <a href="#activity" class="button primary">See Club News</a>
+        </div>
+        <div class="club-cover club-alt"></div>
+      </section>
+
+      <section id="activity" class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Features</p>
+          <h2>Paramount Club functions for work and communication</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="feature-card">
+            <h3>Club news</h3>
+            <p>Share announcements and event outcomes with club members and visitors.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Member communication</h3>
+            <p>Manage conversations, ask questions, and respond to club updates.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Media uploads</h3>
+            <p>Publish photos, videos, and reports for club activities.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Club Showcase</p>
+          <h2>Recent activity uploads</h2>
+        </div>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-preview"></div>
+            <h3>Leadership Workshop</h3>
+            <p>Highlights from our planning session and member training.</p>
+          </div>
+          <div class="video-card">
+            <div class="video-preview"></div>
+            <h3>Project Rollout</h3>
+            <p>Documenting Paramount Club’s latest student engagement project.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Club Overview</p>
+          <h2>Discover the latest Paramount Club stories.</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="feature-card">
+            <h3>Club spotlight</h3>
+            <p>Read about member collaboration, creative projects, and event highlights.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Student engagement</h3>
+            <p>See how the club supports school life through news and activities.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="clubManager" class="section-block section-dark hidden">
+        <div class="section-header">
+          <p class="eyebrow">Club Management</p>
+          <h2>Manage announcements, events, and uploads for this club</h2>
+        </div>
+        <p class="hint" id="clubManagerHint">Sign in with your club account to manage this page.</p>
+        <div id="clubManagerPanel" class="grid grid-2 hidden">
+          <article class="admin-card">
+            <h3>Post announcement</h3>
+            <form id="clubAnnouncementForm" class="comment-form">
+              <label for="clubAnnouncementTitle">Title</label>
+              <input id="clubAnnouncementTitle" type="text" placeholder="Announcement title" required />
+              <label for="clubAnnouncementText">Description</label>
+              <textarea id="clubAnnouncementText" rows="4" placeholder="Share the update..." required></textarea>
+              <button type="submit" class="button primary">Publish Announcement</button>
+            </form>
+            <div id="clubAnnouncementMessage" class="form-message"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Create event</h3>
+            <form id="clubSchedulerForm" class="comment-form">
+              <input type="hidden" id="schedulerClub" value="">
+              <label for="schedulerTitle">Event title</label>
+              <input id="schedulerTitle" type="text" placeholder="Event title" required />
+              <label for="schedulerDate">Date</label>
+              <input id="schedulerDate" type="date" required />
+              <label for="schedulerTime">Time</label>
+              <input id="schedulerTime" type="time" required />
+              <button type="submit" class="button primary">Add Event</button>
+              <button type="button" id="schedulerCancel" class="button secondary hidden">Cancel</button>
+            </form>
+            <div id="schedulerMessage" class="form-message"></div>
+          </article>
+        </div>
+        <div id="clubManagerList" class="grid grid-3 hidden">
+          <article class="admin-card">
+            <h3>Announcements</h3>
+            <div id="clubAnnouncementList"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Scheduled events</h3>
+            <div id="clubEventList"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Uploads</h3>
+            <form id="clubUploadForm" class="comment-form">
+              <label for="clubUploadTitle">Title</label>
+              <input id="clubUploadTitle" type="text" placeholder="Content title" required />
+
+              <label for="clubUploadMediaType">Media type</label>
+              <select id="clubUploadMediaType" required>
+                <option value="image">Picture</option>
+                <option value="video">Video</option>
+              </select>
+
+              <label for="clubUploadUrl">Content URL</label>
+              <input id="clubUploadUrl" type="url" placeholder="https://example.com/resource" required />
+              <button type="submit" class="button primary">Upload Content</button>
+            </form>
+
+            <div id="clubUploadMessage" class="form-message"></div>
+            <div id="clubUploadList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Activity Updates</p>
+          <h2>Latest member and event updates from Paramount Club</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="news-card">
+            <h3>Member Networking</h3>
+            <p>Paramount Club launched an open workshop to connect students and mentors.</p>
+          </article>
+          <article class="news-card">
+            <h3>Media Story</h3>
+            <p>The club published a creative showcase for school club achievements.</p>
+          </article>
+        </div>
+      </section>
+      <section id="comments" class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Club Comments</p>
+          <h2>Share your thoughts on the Paramount Club</h2>
+        </div>
+        <div class="comments-panel" id="commentsPanel"></div>
+        <form class="comment-form" id="commentForm">
+          <label for="commentText">Write a comment</label>
+          <textarea id="commentText" placeholder="Share your feedback or reactions..." required></textarea>
+          <button type="submit" class="button primary">Post Comment</button>
+          <p class="hint">Comments are reviewed and approved before they appear publicly.</p>
+          <div id="commentMessage" class="form-message"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

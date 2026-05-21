@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Register for LOGAHS ONLINE to join the school community, clubs, and campus events." />
+  <meta property="og:title" content="Register | LOGAHS ONLINE" />
+  <meta property="og:description" content="Create an account for LOGAHS ONLINE and sign up for club activity updates and school event notifications." />
+  <meta property="og:type" content="website" />
+  <title>Register | LOGAHS ONLINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell login-shell">
+    <header class="site-header login-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>REGISTER</span>
+      </div>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+      <nav class="site-nav admin-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="events.html">Events</a>
+        <a href="resources.html">Resources</a>
+        <a href="club-calendar.html">Club Calendar</a>
+        <a href="register.html" class="nav-cta active">Register</a>
+      </nav>
+    </header>
+
+    <main class="login-main">
+      <section class="section-block login-box">
+        <div class="section-header">
+          <p class="eyebrow">Student Registration</p>
+          <h2 id="registerHeadline">Create your LOGAHS ONLINE account.</h2>
+          <p id="registerDescription">Register to join the community, clubs, and stay informed on campus updates.</p>
+        </div>
+        <form id="registrationForm" class="login-form">
+          <label for="registrationName">Full Name</label>
+          <input type="text" id="registrationName" placeholder="Enter your full name" required />
+
+          <label for="registrationEmail">School Email</label>
+          <input type="email" id="registrationEmail" placeholder="you@school.edu" required />
+
+          <label for="registrationRole">I am a</label>
+          <select id="registrationRole" required>
+            <option value="">Select your role</option>
+            <option value="Learner">Learner</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Club Member">Club Member</option>
+            <option value="Parent">Parent</option>
+          </select>
+
+          <label for="registrationInterest">Interest</label>
+          <input type="text" id="registrationInterest" placeholder="News, clubs, wellness, or admissions" required />
+
+          <button type="submit" class="button primary">Register</button>
+          <div id="registrationMessage" class="form-message"></div>
+        </form>
+        <p id="registerHint" class="hint">Registration is simulated on the client side and saves your request locally for the demo experience.</p>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

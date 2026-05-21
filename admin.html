@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Portal | LOGAHS ONLINE</title>
+  <meta name="description" content="Admin portal for LOGAHS ONLINE with moderation tools, club management, event scheduling, and announcement publishing." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell admin-shell">
+    <header class="site-header admin-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>ADMIN</span>
+      </div>
+      <nav class="site-nav admin-nav">
+        <a href="index.html">Back to Home</a>
+        <button id="themeToggle" class="button secondary">Switch Theme</button>
+        <a href="https://www.logahs-online.org" target="_blank" rel="noopener noreferrer" class="nav-cta">External Site</a>
+        <a href="login.html" class="nav-cta">Login</a>
+      </nav>
+    </header>
+
+    <main class="admin-main">
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Admin Portal</p>
+          <h2>Superior website control for Super Administrator and System Administrator</h2>
+        </div>
+        <div class="grid grid-2 admin-stats">
+          <article class="feature-card stat-card">
+            <h3 id="insightApprovedComments">0</h3>
+            <p>Approved comments</p>
+          </article>
+          <article class="feature-card stat-card">
+            <h3 id="insightPendingComments">0</h3>
+            <p>Pending comments</p>
+          </article>
+          <article class="feature-card stat-card">
+            <h3 id="insightSiteViews">0</h3>
+            <p>Site page views</p>
+          </article>
+          <article class="feature-card stat-card">
+            <h3 id="insightSubscriptions">0</h3>
+            <p>Newsletter subscribers</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Website Insights</p>
+          <h2>See activity and site performance at a glance</h2>
+        </div>
+        <div class="grid grid-3 admin-stats" id="adminInsightCards"></div>
+        <div class="activity-log" id="adminActivityLog"></div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Comment Moderation</p>
+          <h2>Approve or remove comments from the public feed</h2>
+        </div>
+        <div class="moderation-list" id="moderationPanel"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Announcements</p>
+          <h2>Publish and edit homepage news items</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="admin-card">
+            <h3>Add or update announcement</h3>
+            <form id="adminNewsForm" class="comment-form">
+              <label for="adminNewsCategory">Category</label>
+              <select id="adminNewsCategory" required>
+                <option value="Academic">Academic</option>
+                <option value="Sports">Sports</option>
+                <option value="Events">Events</option>
+                <option value="General">General</option>
+              </select>
+              <label for="adminNewsTitle">Headline</label>
+              <input id="adminNewsTitle" type="text" placeholder="E.g. New campus initiative" required />
+              <label for="adminNewsDescription">Description</label>
+              <textarea id="adminNewsDescription" rows="4" placeholder="Share the announcement details" required></textarea>
+              <button type="submit" class="button primary">Save Announcement</button>
+            </form>
+            <div id="adminNewsMessage" class="form-message"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Announcement manager</h3>
+            <div id="adminNewsList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Event Management</p>
+          <h2>Manage club events from the central portal</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="admin-card">
+            <h3>Add or update club event</h3>
+            <form id="adminEventForm" class="comment-form">
+              <label for="adminEventClub">Club</label>
+              <select id="adminEventClub" required>
+                <option value="Interact Club">Interact Club</option>
+                <option value="Paramount Club">Paramount Club</option>
+                <option value="Peer Educators Network">Peer Educators Network</option>
+              </select>
+              <label for="adminEventTitle">Event title</label>
+              <input id="adminEventTitle" type="text" placeholder="E.g. Community workshop" required />
+              <label for="adminEventDate">Date</label>
+              <input id="adminEventDate" type="date" required />
+              <label for="adminEventTime">Time</label>
+              <input id="adminEventTime" type="time" required />
+              <button type="submit" class="button primary">Save Event</button>
+            </form>
+            <div id="adminEventMessage" class="form-message"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Club event manager</h3>
+            <div id="adminEventList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Club Appearance</p>
+          <h2>Set custom backgrounds for each club portal</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="admin-card">
+            <h3>Update club background</h3>
+            <form id="adminClubBackgroundForm" class="comment-form">
+              <label for="adminClubBackgroundSelect">Club</label>
+              <select id="adminClubBackgroundSelect" required>
+                <option value="Interact Club">Interact Club</option>
+                <option value="Paramount Club">Paramount Club</option>
+                <option value="Peer Educators Network">Peer Educators Network</option>
+              </select>
+              <label for="adminClubBackgroundUrl">Background image URL</label>
+              <input id="adminClubBackgroundUrl" type="url" placeholder="https://example.com/image.jpg" required />
+              <button type="submit" class="button primary">Save Background</button>
+            </form>
+            <div id="adminClubBackgroundMessage" class="form-message"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Current club backgrounds</h3>
+            <div id="adminClubBackgroundList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Site Content</p>
+          <h2>Edit homepage copy and club section details</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="admin-card">
+            <h3>Update homepage and club text</h3>
+            <form id="adminSiteSettingsForm" class="comment-form">
+              <label for="siteHeroTitle">Homepage headline</label>
+              <input id="siteHeroTitle" type="text" placeholder="Homepage headline" required />
+              <label for="siteHeroSubtitle">Homepage subtitle</label>
+              <input id="siteHeroSubtitle" type="text" placeholder="Homepage subtitle" required />
+              <label for="siteCard1Text">Hero card one text</label>
+              <input id="siteCard1Text" type="text" placeholder="Card one text" required />
+              <label for="siteCard2Text">Hero card two text</label>
+              <input id="siteCard2Text" type="text" placeholder="Card two text" required />
+              <label for="siteAboutCard1">About card one text</label>
+              <input id="siteAboutCard1" type="text" placeholder="About card one" required />
+              <label for="siteAboutCard2">About card two text</label>
+              <input id="siteAboutCard2" type="text" placeholder="About card two" required />
+              <label for="siteClub1Desc">Interact Club description</label>
+              <input id="siteClub1Desc" type="text" placeholder="Interact Club description" required />
+              <label for="siteClub2Desc">Paramount Club description</label>
+              <input id="siteClub2Desc" type="text" placeholder="Paramount Club description" required />
+              <label for="siteClub3Desc">Peer Educators description</label>
+              <input id="siteClub3Desc" type="text" placeholder="Peer Educators description" required />
+              <button type="submit" class="button primary">Save Site Content</button>
+            </form>
+            <div id="adminSiteSettingsMessage" class="form-message"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Current site content</h3>
+            <div id="adminSiteSettingsPreview"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Contact & Registration</p>
+          <h2>Edit contact page details and registration page copy</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="admin-card">
+            <h3>Update contact and registration pages</h3>
+            <form id="adminContactRegisterForm" class="comment-form">
+              <label for="siteContactHeadline">Contact section headline</label>
+              <input id="siteContactHeadline" type="text" placeholder="Contact Us headline" required />
+              <label for="siteContactEmail">Contact email</label>
+              <input id="siteContactEmail" type="email" placeholder="contact@logahsonline.school" required />
+              <label for="siteContactPhone">Contact phone</label>
+              <input id="siteContactPhone" type="text" placeholder="+263 123 456 789" required />
+              <label for="siteRegisterHeadline">Register page headline</label>
+              <input id="siteRegisterHeadline" type="text" placeholder="Register page headline" required />
+              <label for="siteRegisterDescription">Register page description</label>
+              <textarea id="siteRegisterDescription" rows="3" placeholder="Register page description" required></textarea>
+              <label for="siteRegisterHint">Register page hint text</label>
+              <textarea id="siteRegisterHint" rows="2" placeholder="Registration hint text" required></textarea>
+              <button type="submit" class="button primary">Save Contact & Register</button>
+            </form>
+            <div id="adminContactRegisterMessage" class="form-message"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Current contact & registration copy</h3>
+            <div id="adminContactRegisterPreview"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Gallery Manager</p>
+          <h2>Add and manage homepage gallery items</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="admin-card">
+            <h3>Add gallery image</h3>
+            <form id="adminGalleryForm" class="comment-form">
+              <label for="galleryItemCaption">Image caption</label>
+              <input id="galleryItemCaption" type="text" placeholder="Campus Fair" required />
+              <label for="galleryItemImageUrl">Image URL</label>
+              <input id="galleryItemImageUrl" type="url" placeholder="https://example.com/image.jpg" required />
+              <button type="submit" class="button primary">Save Gallery Item</button>
+            </form>
+            <div id="adminGalleryMessage" class="form-message"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Gallery item manager</h3>
+            <div id="adminGalleryList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Club Management</p>
+          <h2>Quick access to club profiles and dashboards</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="admin-card">
+            <h3>Interact Club</h3>
+            <p>Manage announcements and calendar events.</p>
+          </article>
+          <article class="admin-card">
+            <h3>Paramount Club</h3>
+            <p>Update media uploads and news stories.</p>
+          </article>
+          <article class="admin-card">
+            <h3>Peer Educators</h3>
+            <p>Edit posts, share resources, and review approvals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Management Center</p>
+          <h2>Clubs, events, and announcements in one control panel</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="admin-card">
+            <h3>Clubs</h3>
+            <p>View club dashboards, update schedules, and manage member activity.</p>
+          </article>
+          <article class="admin-card">
+            <h3>Events</h3>
+            <p>Publish upcoming events, edit calendars, and invite the community.</p>
+          </article>
+          <article class="admin-card">
+            <h3>Announcements</h3>
+            <p>Create news updates, schedule posts, and review engagement metrics.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

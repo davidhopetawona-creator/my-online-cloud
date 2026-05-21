@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Resources for learners, staff, and club members on LOGAHS ONLINE, including study guides and support materials." />
+  <meta property="og:title" content="Resources | LOGAHS ONLINE" />
+  <meta property="og:description" content="Explore resources for learners, clubs, and staff on LOGAHS ONLINE including study guides and support materials." />
+  <meta property="og:type" content="website" />
+  <title>Resources | LOGAHS ONLINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>ONLINE</span>
+      </div>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="events.html">Events</a>
+        <a href="club-calendar.html">Club Calendar</a>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="register.html">Register</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section-block hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">Resources</p>
+          <h1>Support materials for students, clubs, and staff.</h1>
+          <p>Find guides, study materials, club toolkits, and digital resources to keep school life productive and engaging.</p>
+        </div>
+        <div class="hero-card">
+          <h2>Study and club assets</h2>
+          <p>Download key resources and reference tools for academic success and club development.</p>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Digital Resources</p>
+          <h2>Ready-to-use materials for every part of the school.</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="feature-card">
+            <h3>Study guides</h3>
+            <p>Access helpful guides for exam prep, revision, and classroom study plans.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Club toolkits</h3>
+            <p>Use club organizer templates, event planning sheets, and community outreach resources.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Support links</h3>
+            <p>Find counselling, mentorship, and student wellbeing resources in one place.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Newsletter</p>
+          <h2>Subscribe for resource updates and school announcements.</h2>
+        </div>
+        <form id="newsletterForm" class="comment-form">
+          <label for="newsletterEmail">Email address</label>
+          <input id="newsletterEmail" type="email" placeholder="you@example.com" required />
+          <button type="submit" class="button primary">Subscribe</button>
+          <div id="newsletterMessage" class="form-message"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

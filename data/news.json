@@ -1,0 +1,20 @@
+[
+  {
+    "category": "Academic",
+    "title": "Exam Notice Released",
+    "description": "Preparations begin for term-end exams with new study schedules and support sessions.",
+    "tagColor": "blue"
+  },
+  {
+    "category": "Sports",
+    "title": "Inter-School Tournament",
+    "description": "The football team is ready to compete in the regional championship this weekend.",
+    "tagColor": "red"
+  },
+  {
+    "category": "Events",
+    "title": "Annual Awards Day",
+    "description": "Celebrate student achievement with speeches, presentations, and awards in the school hall.",
+    "tagColor": "navy"
+  }
+]

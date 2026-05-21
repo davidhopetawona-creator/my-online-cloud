@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | LOGAHS ONLINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Login to LOGAHS ONLINE for administrator and club owner access to dashboards and management tools." />
+</head>
+<body>
+  <div class="page-shell login-shell">
+    <header class="site-header login-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>LOGIN</span>
+      </div>
+      <nav class="site-nav admin-nav">
+        <a href="index.html">Back to Home</a>
+      </nav>
+    </header>
+
+    <main class="login-main">
+      <section class="section-block login-box">
+        <div class="section-header">
+          <p class="eyebrow">Login Portal</p>
+          <h2>Sign in to access school and club features</h2>
+        </div>
+        <form class="login-form" id="loginForm">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <button type="submit" class="button primary">Sign In</button>
+          <div id="loginMessage" class="form-message"></div>
+          <button type="button" id="logoutButton" class="button secondary hidden">Logout</button>
+        </form>
+        <p class="hint">Students can browse the public site without logging in. Administrators, club owners, and club members can sign in here to manage their sections.</p>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

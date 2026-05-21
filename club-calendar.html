@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dedicated club calendar for LOGAHS ONLINE with editable event scheduling and club planning tools." />
+  <meta property="og:title" content="Club Calendar | LOGAHS ONLINE" />
+  <meta property="og:description" content="View and manage club events with the dedicated LOGAHS ONLINE club calendar." />
+  <meta property="og:type" content="website" />
+  <title>Club Calendar | LOGAHS ONLINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>ONLINE</span>
+      </div>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="events.html">Events</a>
+        <a href="resources.html">Resources</a>
+        <a href="register.html">Register</a>
+        <a href="club-calendar.html" class="active">Club Calendar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section-block hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">Club Calendar</p>
+          <h1>Browse verified club events in one calendar.</h1>
+          <p>See the full schedule of club activities and stay informed about upcoming meetings and programs.</p>
+        </div>
+        <div class="hero-card">
+          <h2>Club planning made simple</h2>
+          <p>Track upcoming meetings and keep everyone aligned with club event scheduling.</p>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Scheduler</p>
+          <h2>Dedicated club event planning tools.</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="feature-card schedule-card">
+            <h3>Club event calendar</h3>
+            <p>View the schedule of verified club activities here. Event editing is reserved for administrators.</p>
+          </article>
+          <article class="feature-card schedule-list-card">
+            <h3>Upcoming events list</h3>
+            <div id="clubEventList" class="schedule-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Monthly Club Calendar</p>
+          <h2>View club events in a full month grid.</h2>
+        </div>
+        <div class="calendar-panel">
+          <div class="calendar-header">
+            <button id="calendarPrev" class="button secondary">‹</button>
+            <h3 id="calendarMonthLabel"></h3>
+            <button id="calendarNext" class="button secondary">›</button>
+          </div>
+          <div id="calendarGrid" class="calendar-grid"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

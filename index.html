@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOGAHS ONLINE | School Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="LOGAHS ONLINE school portal for learners, teachers, and administrators with news, clubs, events and community features." />
+  <meta property="og:title" content="LOGAHS ONLINE | School Website" />
+  <meta property="og:description" content="Modern school portal for learners, clubs, and administrators with news, events, and community features." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>ONLINE</span>
+      </div>
+      <button class="nav-toggle" aria-label="Open navigation">â˜°</button>
+      <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="events.html">Events</a>
+        <a href="club-calendar.html">Club Calendar</a>
+        <a href="resources.html">Resources</a>
+        <a href="register.html">Register</a>
+        <a href="#news">News</a>
+        <a href="#videos">Video Updates</a>
+        <a href="#clubs">Clubs</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#comments">Comments</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </header>
+<!-- Cloud Upload Section -->
+<div id="cloud-upload-box" style="margin: 20px; padding: 20px; border: 2px dashed #ccc; border-radius: 8px; text-align: center;">
+    <h3>My Online Cloud Storage</h3>
+    <input type="file" id="fileChooser" />
+    <button onclick="uploadMyFile()" style="margin-left: 10px; padding: 5px 15px; cursor: pointer;">Upload File</button>
+    <p id="uploadStatus" style="margin-top: 10px; font-weight: bold;"></p>
+</div>
+    <main>
+      <section id="home" class="hero-section">
+        <div class="hero-copy">
+          <h1 id="heroTitle">Connecting Learners, Leaders, and Innovation</h1>
+          <p id="heroSubtitle">Experience a modern school website built for students, staff, clubs, and administrators with responsive design, fast access, and a professional interface.</p>
+          <div class="hero-buttons">
+            <a href="#news" class="button primary">Latest News</a>
+            <a href="#clubs" class="button secondary">Explore Clubs</a>
+            <a href="login.html" class="button secondary">Admin Portal</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <h2 id="heroCard1Title">Upcoming Event</h2>
+            <p id="heroCard1Text">Leadership Summit & Award Ceremony - June 2026</p>
+          </div>
+          <div class="hero-card accent">
+            <h2 id="heroCard2Title">Featured Club</h2>
+            <p id="heroCard2Text">Peer Educators Network: Health awareness and student engagement.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">About School</p>
+          <h2>Our mission is to inspire learners and empower leaders.</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="feature-card">
+            <h3 id="aboutCard1Title">Principalâ€™s Message</h3>
+            <p id="aboutCard1Text">Our school is committed to excellence, creativity, and a supportive learning environment for every student.</p>
+          </article>
+          <article class="feature-card">
+            <h3 id="aboutCard2Title">Responsive Design</h3>
+            <p id="aboutCard2Text">Accessible on phones, tablets, and desktops with a smooth, modern interface and engaging visuals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="news" class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">School News</p>
+          <h2>Latest updates from academics, sports, and events</h2>
+        </div>
+        <div class="grid grid-3" id="newsFeed"></div>
+      </section>
+
+      <section id="videos" class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Video Updates</p>
+          <h2>Watch the latest school highlights and educational clips</h2>
+        </div>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-preview"></div>
+            <h3>School Leadership Address</h3>
+            <p>Message from the principal on the new academic initiatives.</p>
+          </div>
+          <div class="video-card">
+            <div class="video-preview"></div>
+            <h3>Event Highlights</h3>
+            <p>Clubs and student groups in action at the campus fair.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="clubs" class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Clubs</p>
+          <h2>Club platforms for leadership, education, and community</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="club-card">
+            <h3>Interact Club</h3>
+            <p id="club1Desc">Club announcements, activities, event calendar, and member updates.</p>
+            <a href="interact-club.html" class="button secondary club-link">Visit Club</a>
+          </article>
+          <article class="club-card">
+            <h3>Paramount Club</h3>
+            <p id="club2Desc">News, member communication, event management, and media uploads.</p>
+            <a href="paramount-club.html" class="button secondary club-link">Visit Club</a>
+          </article>
+          <article class="club-card">
+            <h3>Peer Educators</h3>
+            <p id="club3Desc">Health campaigns, peer education tools, and support resources.</p>
+            <a href="pen-club.html" class="button secondary club-link">Visit Club</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery" class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Gallery</p>
+          <h2>Student life, clubs, and school events in pictures</h2>
+        </div>
+        <div id="galleryGrid" class="gallery-grid">
+          <div class="gallery-item" data-caption="Campus Fair" data-image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80" alt="Students at a campus fair" loading="lazy" />
+            <div class="gallery-caption">Campus Fair</div>
+          </div>
+          <div class="gallery-item" data-caption="Club Awards" data-image="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="Students receiving awards" loading="lazy" />
+            <div class="gallery-caption">Club Awards</div>
+          </div>
+          <div class="gallery-item" data-caption="Volunteer Day" data-image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Volunteer students working outdoors" loading="lazy" />
+            <div class="gallery-caption">Volunteer Day</div>
+          </div>
+          <div class="gallery-item" data-caption="Leadership Summit" data-image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Students in a leadership summit" loading="lazy" />
+            <div class="gallery-caption">Leadership Summit</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="comments" class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Comments</p>
+          <h2>Share feedback, ideas, and reactions to school updates</h2>
+        </div>
+        <div class="comments-panel" id="commentsPanel"></div>
+        <form class="comment-form" id="commentForm">
+          <label for="commentText">Share a comment</label>
+          <textarea id="commentText" placeholder="Write your comment..." required></textarea>
+          <button type="submit" class="button primary">Post Comment</button>
+          <p class="hint">New comments are reviewed by administrators before appearing publicly.</p>
+          <div id="commentMessage" class="form-message"></div>
+        </form>
+      </section>
+
+      <section id="contact" class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Contact Us</p>
+          <h2 id="contactHeadline">Reach out for school support, admissions, or partnership queries</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>School Office</h3>
+            <p id="contactEmailDisplay">Email: contact@logahsonline.school</p>
+            <p id="contactPhoneDisplay">Phone: +263 123 456 789</p>
+          </div>
+          <div class="contact-card">
+            <h3>Send a message</h3>
+            <form id="contactForm" class="comment-form">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" placeholder="Your name" required />
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" placeholder="you@example.com" required />
+              <label for="contactMessageInput">Message</label>
+              <textarea id="contactMessageInput" placeholder="How can we help?" required></textarea>
+              <button type="submit" class="button primary">Send Message</button>
+              <div id="contactFormMessage" class="form-message"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <div id="lightboxModal" class="lightbox-modal hidden" aria-hidden="true">
+        <div class="lightbox-content">
+          <button class="lightbox-close" aria-label="Close preview">Ã—</button>
+          <img src="" alt="" />
+          <p class="lightbox-caption"></p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- Public Content Block visible to all devices -->
+<div id="site-content" style="padding: 20px; background: #f9f9f9; margin: 20px; border-radius: 5px;">
+    <h1 id="display-title">Loading Title...</h1>
+    <p id="display-desc">Loading description text...</p>
+</div>
+
+<!-- Protected Control panel section reserved for the Admin -->
+<div id="admin-panel" style="padding: 20px; border: 2px solid #000; margin: 20px; background: #fff3cd;">
+    <h3>Admin Management Console</h3>
+    <label>Edit Site Title:</label><br>
+    <input type="text" id="edit-title" style="width: 80%; padding: 5px;"><br><br>
+    <label>Edit Site Description:</label><br>
+    <textarea id="edit-desc" style="width: 80%; height: 60px; padding: 5px;"></textarea><br><br>
+    <button onclick="saveAdminChanges()">Publish Updates Globally</button>
+</div>
+

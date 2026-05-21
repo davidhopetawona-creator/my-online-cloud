@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Event calendar and upcoming school activities for LOGAHS ONLINE, including club programs and award ceremonies." />
+  <meta property="og:title" content="Events | LOGAHS ONLINE" />
+  <meta property="og:description" content="Explore the event calendar, club activities, and upcoming dates for the LOGAHS ONLINE campus community." />
+  <meta property="og:type" content="website" />
+  <title>Events | LOGAHS ONLINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">LOGAHS</div>
+        <span>ONLINE</span>
+      </div>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="club-calendar.html">Club Calendar</a>
+        <a href="resources.html">Resources</a>
+        <a href="register.html">Register</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section-block hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">School Events</p>
+          <h1>Stay up to date with the full event calendar.</h1>
+          <p>From club meetings to awards ceremonies, LOGAHS ONLINE keeps every activity visible and easy to join.</p>
+        </div>
+        <div class="hero-card">
+          <h2>Upcoming highlights</h2>
+          <p>Find the latest club events, community projects, and school-wide programs here.</p>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Event Calendar</p>
+          <h2>Planned programs for the next month</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="feature-card">
+            <h3>June 5</h3>
+            <p>Leadership Summit and Award Ceremony in the main hall.</p>
+          </article>
+          <article class="feature-card">
+            <h3>June 12</h3>
+            <p>Community Clean-up organized by Interact Club and volunteers.</p>
+          </article>
+          <article class="feature-card">
+            <h3>June 19</h3>
+            <p>Peer Educators Network wellness workshop for students.</p>
+          </article>
+          <article class="feature-card">
+            <h3>June 26</h3>
+            <p>Paramount Club showcase and creative collaboration day.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block section-dark">
+        <div class="section-header">
+          <p class="eyebrow">Club Events</p>
+          <h2>Current club activity schedule</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="feature-card schedule-card">
+            <h3>Club events overview</h3>
+            <p>Students can view the current club event calendar below. Event planning and updates are managed by administrators.</p>
+          </article>
+          <article class="feature-card schedule-list-card">
+            <h3>Upcoming club events</h3>
+            <div id="clubEventList" class="schedule-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <p class="eyebrow">Event Highlights</p>
+          <h2>Recent accomplishments and activities.</h2>
+        </div>
+        <div id="galleryGrid" class="gallery-grid">
+          <div class="gallery-item events-img-1"><div class="gallery-caption">School Debate</div></div>
+          <div class="gallery-item events-img-2"><div class="gallery-caption">Volunteer Day</div></div>
+          <div class="gallery-item events-img-3"><div class="gallery-caption">Leadership Panel</div></div>
+          <div class="gallery-item events-img-4"><div class="gallery-caption">Club Expo</div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+if (action === 'remove') {
+  await deleteDoc(doc(db, "club_events", eventId));
+  await renderClubEvents(); // Refresh UI
+  showFormMessage(schedulerMessage, 'Event deleted.', 'success');
+}
